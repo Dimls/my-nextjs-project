@@ -1,0 +1,224 @@
+$base-font-family: 'Montserrat', sans-serif;
+
+// mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin montserrat {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.Main-container {
+  @include flex-center;
+  flex-direction: row;
+  padding: 0px;
+  gap: 80px;
+  margin-top: 20px;
+}
+
+.Ellipsis-container {
+  @include flex-center;
+  width: 527px;
+  height: 300px;
+  position: relative;
+}
+
+.Ellipsis-parent {
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  background-color: #F3F3F3;
+  border-radius: 50%;
+}
+
+.Ellipsis-child {
+  position: absolute;
+  width: 162px;
+  height: 162px;
+  background-color: #FFFFFF;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.Feature-container {
+  @include flex-center;
+  width: 206px;
+  height: 90px;
+  z-index: 1;
+  flex-direction: row;
+  padding: 0px;
+  gap: 16px;
+  position: absolute;
+  transition: all 1s ease-out;
+}
+
+.Feature-container:hover {
+  .shade {
+    height: 13px;
+    opacity: 1;
+    transition: all .3s ease-in;
+  }
+}
+
+.Feature-circle {
+  @include flex-center;
+  background-color: #C4C4C4;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+}
+
+.Feature-text {
+  @include montserrat;
+  width: 100px;
+  text-align: left;
+}
+
+.Feature-top {
+  left: 40.8%;
+  right: 20.11%;
+  top: 0%;
+  bottom: 70%;
+}
+
+.Feature-right {
+  left: 60.91%;
+  right: 0%;
+  top: 35%;
+  bottom: 35%;
+}
+
+.Feature-bottom {
+  left: 40.8%;
+  right: 20.11%;
+  top: 70%;
+  bottom: 0%;
+}
+
+.Feature-left {
+  left: 0%;
+  right: 60.91%;
+  top: 35%;
+  bottom: 35%;
+  flex-direction: row-reverse;
+
+  .Feature-text {
+    text-align: right;
+  }
+}
+
+.Advantages-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+}
+
+.Advantage-container {
+  @include flex-center;
+  flex-direction: row;
+  padding: 0px;
+  gap: 32px;
+}
+
+.Advantage-container.inactive {
+  .Advantage-box {
+    filter: blur(5px);
+  }
+}
+
+.Advantage-container.active {
+  .Benefit-text {
+    margin: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.5s ease-in;
+  }
+}
+
+.Advantage-box {
+  @include flex-center;
+  flex-direction: row;
+  padding: 24px 32px;
+  gap: 16px;
+  width: 277px;
+  height: 80px;
+  background: #F3F3F3;
+  border-radius: 10px;
+}
+
+.Advantage-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.Advantage-text,
+.Benefit-text {
+  @include montserrat;
+}
+
+.Benefit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  width: 180px;
+  height: 46px;
+  border-radius: 10px;
+}
+
+.Benefit-text {
+  margin-left: -92px;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.Restart-bar {
+  @include flex-center;
+  background: #F6F6F6;
+  height: 61px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.Restart-text {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.shade {
+  height: 13px;
+  width: 90px;
+  background: #F2F2F2;
+  border-radius: 50%;
+  height: 0;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.bg-orange {
+  background-color: #FA7F1F;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
