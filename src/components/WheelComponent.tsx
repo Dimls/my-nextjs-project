@@ -14,10 +14,10 @@ const WheelComponent: React.FC = () => {
             }
         };
 
-        window.addEventListener("keydown", (e: KeyboardEvent) => handleKeyDown(e));
+        window.addEventListener("keypress", (e: KeyboardEvent) => handleKeyDown(e));
 
         return () => {
-            window.removeEventListener("keydown", (e: KeyboardEvent) => handleKeyDown(e))
+            window.removeEventListener("keypress", (e: KeyboardEvent) => handleKeyDown(e))
         }
     }, [features, advantages])
 
@@ -48,6 +48,7 @@ const WheelComponent: React.FC = () => {
 
         setAdvantages([...updatedAdvantages]);
         setFeatures(getPositions(updatedFeatures, index));
+
     }
 
     return (

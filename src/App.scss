@@ -60,7 +60,7 @@ $base-font-family: 'Montserrat', sans-serif;
   padding: 0px;
   gap: 16px;
   position: absolute;
-  transition: all 1s ease-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .Feature-container:hover {
